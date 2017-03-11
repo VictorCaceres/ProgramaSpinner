@@ -120,7 +120,46 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    Comida.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            switch (position) {
+                case 0:
 
+                    break;
+
+                case 1:
+                    Intent sb = new Intent(MainActivity.this, Sabritas.class);
+                    startActivity(sb);
+                    break;
+
+                case 2:
+                    Intent ct = new Intent(MainActivity.this, Chocolate.class);
+                    startActivity(ct);
+                    break;
+
+                case 3:
+                    Intent gt = new Intent(MainActivity.this, Galleta.class);
+                    startActivity(gt);
+                    break;
+
+                case 4:
+                    Intent ca = new Intent(MainActivity.this, Caramelo.class);
+                    startActivity(ca);
+                    break;
+
+                case 5:
+                    Intent fr = new Intent(MainActivity.this, Fritura.class);
+                    startActivity(fr);
+                    break;
+            }
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+
+        }
+    });
         }
 
     }
