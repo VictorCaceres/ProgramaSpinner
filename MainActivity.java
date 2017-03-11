@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
     Spinner Bebida;
     Spinner Comida;
 
-    String [] datosFruta = {"Manzana","Pera","Platano","Uva","Naranja"};
-    String [] datosBebida = {"Coca-Cola","Agua","Horchata","Coca-Cola Ligth","Cerveza"};
-    String [] datosComida = {"Sabritas","Chocolate","Galletas","Caramelos","Frituras"};
+    String [] datosFruta = {"Seleccionar Fruta","Manzana","Pera","Platano","Uva","Naranja"};
+    String [] datosBebida = {"Seleccionar Bebida","Coca-Cola","Agua","Horchata","Coca-Cola Ligth","Cerveza"};
+    String [] datosComida = {"Seleccionar Comida","Sabritas","Chocolate","Galletas","Caramelos","Frituras"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,26 +44,30 @@ public class MainActivity extends AppCompatActivity {
                 switch (position)
                 {
                     case 0:
+
+                        break;
+
+                    case 1:
                         Intent mz =  new Intent(MainActivity.this,Manzana.class);
                         startActivity(mz);
                         break;
 
-                    case 1:
+                    case 2:
                         Intent pr =  new Intent(MainActivity.this,Pera.class);
                         startActivity(pr);
                         break;
 
-                    case 2:
+                    case 3:
                         Intent pl =  new Intent(MainActivity.this,Platano.class);
                         startActivity(pl);
                         break;
 
-                    case 3:
+                    case 4:
                         Intent uv =  new Intent(MainActivity.this,Uva.class);
                         startActivity(uv);
                         break;
 
-                    case 4:
+                    case 5:
                         Intent na =  new Intent(MainActivity.this,Naranja.class);
                         startActivity(na);
                         break;
@@ -75,5 +79,49 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        Bebida.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+
+                        break;
+
+                    case 1:
+                        Intent cc = new Intent(MainActivity.this, CocaCola.class);
+                        startActivity(cc);
+                        break;
+
+                    case 2:
+                        Intent ag = new Intent(MainActivity.this, Agua.class);
+                        startActivity(ag);
+                        break;
+
+                    case 3:
+                        Intent hc = new Intent(MainActivity.this, Horchata.class);
+                        startActivity(hc);
+                        break;
+
+                    case 4:
+                        Intent ccl = new Intent(MainActivity.this, CocaLight.class);
+                        startActivity(ccl);
+                        break;
+
+                    case 5:
+                        Intent cv = new Intent(MainActivity.this, Cerveza.class);
+                        startActivity(cv);
+                        break;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        }
+
     }
-}
+
